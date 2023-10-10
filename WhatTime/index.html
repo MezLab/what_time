@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>What Time</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <style>
+        span.icon{
+            background-color: #007bff;
+            width: 50px;
+            height: 50px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        form#addTime {
+            display: none;
+
+            position: absolute;
+            width: 400px;
+            padding: 60px;
+            background-color: black;
+            color: #fff;
+            border-radius: 5px;
+            text-align: center;
+
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        form#addTime span{
+            border: 1px solid #fff;
+            margin-top: 10px;
+            color: #fff;
+            font-size: 16px;
+        }
+        form#addTime input{
+            background-color: transparent;
+            color: #fff;
+        }
+        div.text-success #lastTime {
+          display: block;
+          padding: 10px;
+          max-width: fit-content;
+          background-color: #e6e6e6;
+          margin: 10px 0px;
+        }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+        <div class="d-flex align-items-center text-white p-3 my-3 bg-black rounded shadow-sm">
+          <div class="lh-1">
+            <h1 class="h4 mb-0 lh-1">What Time</h1>
+            <small>dal 2023</small>
+          </div>
+        </div>
+      
+        <div class="my-3 p-3 bg-body rounded shadow-sm">
+          <h6 class="border-bottom pb-2 mb-0">Inserisci un tempo</h6>
+          <div class="d-flex text-body-secondary pt-3">
+            <span id="add" class="icon me-2 rounded"> Add </span>
+            <p class="pb-3 mb-0 small lh-sm border-bottom">
+              <strong class="d-block text-gray-dark">@time</strong>
+              Clicca il bottone per inserire il tempo che vuoi calcolare
+            </p>
+          </div>
+        </div>
+
+        <!-- Form aggiunta tempo -->
+        <form id="addTime" class="needs-validation" novalidate="">
+            <div class="row g-3">
+              <div class="col-sm-6">
+                <label for="firstName" class="form-label">Minuti</label>
+                <input type="text" class="form-control" id="firstField" placeholder="" value="" required="">
+                <div class="invalid-feedback">
+                  Valid first name is required.
+                </div>
+              </div>
+  
+              <div class="col-sm-6">
+                <label for="lastName" class="form-label">Secondi</label>
+                <input type="text" class="form-control" id="secondField" placeholder="" value="" required="">
+                <div class="invalid-feedback">
+                  Valid last name is required.
+                </div>
+              </div>
+  
+            </div>
+
+            <span id="btn_add"class="w-100 btn btn-lg">Aggiungi</span>
+          </form>
+
+      
+        <div class="my-3 p-3 bg-body rounded shadow-sm">
+          <h6 class="border-bottom pb-2 mb-0">I tuoi tempi</h6>
+          <div id="time">
+            <!-- Aggiunta Box -->
+          </div>
+          <small class="d-block text-start mt-3">
+            <button onclick="wt._final()" type="button" class="btn btn-success">Calcola Tempo Finale </button>
+          </small>
+          <div class="text-success">
+            <small id="lastTime"></small>
+          </div>
+        </div>
+      </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="what_time.js"></script>
+  </body>
+</html>
